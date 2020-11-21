@@ -5,7 +5,6 @@ import {
   Route
 } from "react-router-dom";
 
-//버튼을 눌렀을 때
 import MyStoneList from './MyStoneList';
 import MyStoneDetail from './MyStoneDetail';
 

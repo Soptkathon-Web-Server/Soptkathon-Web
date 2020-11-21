@@ -30,7 +30,7 @@ function MyStoneDetail({ match }) {
         case 'pending':
             return ;
         case 'rejected':
-            return <h1>해당 멤버가 없습니다</h1>;
+            return <h1>해당 기록이 없습니다</h1>;
         case 'resolved':
             return <MyStoneModal stoneData={data.data}/>;
         case 'idle':
