@@ -1,0 +1,19 @@
+.notes {
+    outline: none;
+    display: inline-block;
+    border: 0;
+    background-attachment: local;
+    background-image:
+      linear-gradient(to right, white 10px, transparent 10px),
+      linear-gradient(to left, white 10px, transparent 10px),
+      repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    line-height: 31px;
+    overflow: hidden;
+    resize: none;
+    width: 58rem;
+    height: 18rem;
+    font-size: 2.4rem;
+    @media only screen and (max-width: 718px) {
+        width:80vw;
+  }   
+  }
