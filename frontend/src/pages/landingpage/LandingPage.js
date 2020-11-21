@@ -1,8 +1,21 @@
+import Axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import FirstStoneIcon from '../../asset/icon/first_storn_icon.svg';
 import GotoPondIcon from '../../asset/icon/gotopond_icon.svg';
+import { initUser } from '../../_actions/user_action';
 import './LandingPage.scss';
 
 const LandingPage = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(initUser()).then(
+            response => console.log(response)
+        )
+
+    }, []);
 
     return ( 
         <>
@@ -25,12 +38,19 @@ const LandingPage = () => {
             
             <div class="landing-bnt">
                 <div class="landing-bnt-box">
-                    <p class="landing-buttontext">처음 시작한다면?</p>
-                    <img src={FirstStoneIcon} alt="my image"/>
+                    <Link to='/start'>
+                      <p class="landing-buttontext">처음 시작한다면?</p>
+                       <img src={FirstStoneIcon} alt="my image"/>
+                    </Link>
+
                 </div>
                 <div class="landing-bnt-box">
+
+                <Link to ='/login'>
                 <p class="landing-buttontext">이미 내 호수가 있다면?</p>
                 <img src={GotoPondIcon} alt="my image"/>
+                </ Link >
+
                 </div>
             </div>
 
