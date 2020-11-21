@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getOneStone } from '../../lib/mystoneAPI';
-import MyStoneModal from '../../components/MyStoneModal';
+import MyStoneModal from '../../components/MyStone/MyStoneModal';
 
 //모달창은 컴포넌트로 해야하는건가?
 function MyStoneDetail({ match }) {
