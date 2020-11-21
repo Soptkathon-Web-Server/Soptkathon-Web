@@ -28,7 +28,6 @@ const LandingPage = () => {
                     <p class="landing-buttontext">처음 시작한다면?</p>
                     <img src={FirstStoneIcon} alt="my image"/>
                 </div>
-                   
                 <div class="landing-bnt-box">
                 <p class="landing-buttontext">이미 내 호수가 있다면?</p>
                 <img src={GotoPondIcon} alt="my image"/>
