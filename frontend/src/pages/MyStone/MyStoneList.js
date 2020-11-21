@@ -1,7 +1,7 @@
 import './MyStoneList.scss'
 import React from 'react';
 import { useEffect, useState } from 'react';
-import getMyStones from '../lib/questionAPI';
+import getMyStones from '../lib/mystoneAPI';
 import Stone from '../../components/Stone';
 
 
@@ -31,9 +31,7 @@ function MyStoneList({ history, match }) {
         case 'resolved':
             return (
                 <div className="stones-list">
-                    <div className="stones-list-content-wrapper">
-                        {stonesState.stones.map((stones, i) =><Stone key={"stone-" + i} stoneData={stones}/>)}
-                    </div>
+                    {stonesState.stones.map((stones, i) =><Stone key={"stone-" + i} stoneData={stones}/>)}
                 </div>
             );
         case 'idle':

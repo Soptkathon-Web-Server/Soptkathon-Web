@@ -1,11 +1,11 @@
-import './Stone.scss';
+import './MyStone.scss';
 import { withRouter } from 'react-router-dom';
 
 function Stone({ stoneData }) {
     return (
-        <div className="stone" draggable onClick={ () => history.push(`/my-stone/${stoneData.id}`) }>
+        <div className="stone">
             <div className="image-area">
-                <img src={stoneDataImageUrl} alt="image"/>
+                <img src={stoneData.stoneDataImageUrl} alt="image"/>
             </div>
         </div>
     );
