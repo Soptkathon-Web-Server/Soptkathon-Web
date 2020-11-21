@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../_actions/user_action';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const dispatch = useDispatch();
 
   const[lake,setLake] = useState('');
@@ -16,29 +16,35 @@ const LoginPage = () => {
   }
 
   const toSubmit = () => {
+    const config = {
+      header : {'content-type':"application/json"}
+  }
     let variable = {
       nickname:lake,
       password:password
     }
-    dispatch(loginUser(variable)).then(
+    dispatch(loginUser(variable,config)).then(
       response => {
-        if(response.data.success===false){
-          alert(response.data.message)
-        }
+        if (response.payload.success) {
+          props.history.push("/stone");
+        } else {
+
+          }
       }
     )
   }
+
   return (
     <div className = "outer">
       <div className="container"></div>
         <div className = "left">
             <div className = "content">
                 <div className = "title">내 호수로 가기 위해, 로그인</div>
-                    <form className = "form" toSubmit={toSubmit}>
+                    <form className = "form" onSubmit={toSubmit}>
                         <div><input className="inputbox" type="text" placeholder="호수의 이름" value={lake} onChange={onChangeLake}/></div>
                         <div><input className="inputbox" type="text" placeholder="비밀번호" value={password} onChange={onChangePassword} minLength='6'/></div>
                     </form>
-                    <button className = "loginBtn" toSubmit={toSubmit}>로그인</button>
+                    <button className = "loginBtn" onClick={toSubmit}>로그인</button>
             </div>
         </div>
     </div>

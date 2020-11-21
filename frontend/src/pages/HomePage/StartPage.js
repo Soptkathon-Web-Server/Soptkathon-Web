@@ -1,7 +1,13 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components'
 import './StartPage.scss';
+const BBackground = styled.div`
+    width:100%;
+    height:100%;
+    position:fixed;
+`
 const Background = styled.div`
     width:100%;
     height:3123px;
@@ -238,7 +244,7 @@ const InputThree = styled.input`
         border:none;
     }
 `
-const StartPage = () => {
+const StartPage = (props) => {
 
 
     const [transy, setTransy] = useState(0);
@@ -253,17 +259,21 @@ const StartPage = () => {
     const [randomFour,setRandomFour] = useState('');
     const [randomFive,setRandomFive] = useState('');
     const [randomQustion, setRandomQustion] = useState([])
-    useEffect(() => {
+ 
 
-        (async () => {
-            try {
-                const result = await Axios.get('http://13.209.144.115:3030/api/questions/short');
-                setRandomQustion(result);
-                console.log(result)
-            } catch (e) { 
-            }
-        })();
-    }, []);
+    // useEffect(() => {
+
+    //     (async () => {
+    //         try {
+    //             const config = {
+    //                 header : {jwt:props.token}
+    //             }
+    //             const result = await Axios.get('http://13.209.144.115:3030/api/question/short',config);
+    //             setRandomQustion(result.data.result);
+    //         } catch (e) { 
+    //         }
+    //     })();
+    // }, []);
 
     const onClickHandler = () => {
 
@@ -306,9 +316,10 @@ const StartPage = () => {
         if(value.length <= 2) setBirthDay(value)
     }
     let birthCount = birthYear + birthMonth + birthDay;
+    console.log(randomQustion);
     if(qustionNumber === 0){
         return(
-            <div>
+            <BBackground>
                 <Background transy={transy}/>
                     <StyledTemplate>
                         <Wrap>
@@ -332,11 +343,11 @@ const StartPage = () => {
                         </Wrap>
                     </StyledTemplate>
     
-            </div>
+            </BBackground>
         )
     }else if(qustionNumber===1){
         return(
-            <div>
+            <BBackground>
             <Background transy={transy}/>
                 <StyledTemplate>
                     <Wrap>
@@ -369,16 +380,16 @@ const StartPage = () => {
                     </Wrap>
                 </StyledTemplate>
 
-        </div>    
+        </BBackground>    
         )
     }else if(qustionNumber===2){
         return(
-            <div>
+            <BBackground>
             <Background transy={transy}/>
                 <StyledTemplate>
                     <Wrap>
                     <QustionContainer>
-                        <QustionTitle>요즘 내가 소속감을 느끼는 곳이 있나요?</QustionTitle>
+                        <QustionTitle>내가 요즘 소속감을 느끼는 곳이 있나요?</QustionTitle>
                         <BlankTop margin='5'/>
                             <textarea className='notes' value={randomOne} onChange={RandomOneChange}></textarea>
                         <BlankTop margin='5'/>
@@ -392,16 +403,16 @@ const StartPage = () => {
                     </Wrap>
                 </StyledTemplate>
 
-        </div>    
+        </BBackground>    
         )
     }else if(qustionNumber===3){
         return(
-            <div>
+            <BBackground>
             <Background transy={transy}/>
                 <StyledTemplate>
                     <Wrap>
                     <QustionContainer>
-                        <QustionTitle>요즘 내가 소속감을 느끼는 곳이 있나요?</QustionTitle>
+                        <QustionTitle>가장 듣고 싶은 칭찬은 무엇인가요?</QustionTitle>
                         <BlankTop margin='5'/>
                             <textarea className='notes' value={randomTwo} onChange={RandomTwoChange}></textarea>
                         <BlankTop margin='5'/>
@@ -415,16 +426,16 @@ const StartPage = () => {
                     </Wrap>
                 </StyledTemplate>
 
-        </div>    
+        </BBackground>    
         )
     }else if(qustionNumber===4){
         return(
-            <div>
+            <BBackground>
             <Background transy={transy}/>
                 <StyledTemplate>
                     <Wrap>
                     <QustionContainer>
-                        <QustionTitle>요즘 내가 소속감을 느끼는 곳이 있나요?</QustionTitle>
+                        <QustionTitle>요즘 즐기는 취미는 무엇이고 어떻게 시작하게 되었나요?</QustionTitle>
                         <BlankTop margin='5'/>
                             <textarea className='notes' value={randomThree} onChange={RandomThreeChange}></textarea>
                         <BlankTop margin='5'/>
@@ -438,16 +449,16 @@ const StartPage = () => {
                     </Wrap>
                 </StyledTemplate>
 
-        </div>    
+        </BBackground>    
         )
     }else if(qustionNumber===5){
         return(
-            <div>
+            <BBackground>
             <Background transy={transy}/>
                 <StyledTemplate>
                     <Wrap>
                     <QustionContainer>
-                        <QustionTitle>요즘 내가 소속감을 느끼는 곳이 있나요?</QustionTitle>
+                        <QustionTitle>1년 후의 나를 만날 수 있다면, 해주고 싶은 말은 무엇인가요?</QustionTitle>
                         <BlankTop margin='5'/>
                             <textarea className='notes' value={randomFour} onChange={RandomFourChange}></textarea>
                         <BlankTop margin='5'/>
@@ -461,16 +472,16 @@ const StartPage = () => {
                     </Wrap>
                 </StyledTemplate>
 
-        </div>    
+        </BBackground>    
         )
     }else if(qustionNumber===6){
         return(
-            <div>
+            <BBackground>
             <Background transy={transy}/>
                 <StyledTemplate>
                     <Wrap>
                     <QustionContainer>
-                        <QustionTitle>요즘 내가 소속감을 느끼는 곳이 있나요?</QustionTitle>
+                        <QustionTitle>요즘 꽂힌 노래를 소개해 주세요.</QustionTitle>
                         <BlankTop margin='5'/>
                             <textarea className='notes' value={randomFive} onChange={RandomFiveChange}></textarea>
                         <BlankTop margin='5'/>
@@ -484,7 +495,7 @@ const StartPage = () => {
                     </Wrap>
                 </StyledTemplate>
 
-        </div>    
+        </BBackground>    
         )
     }
 
