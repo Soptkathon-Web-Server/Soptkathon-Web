@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
-
 .outer{
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -12,6 +11,7 @@
     background-color: #C4C4C4;
 }
 
+
 .left {
     background-color:white;
     position: absolute;
@@ -20,6 +20,7 @@
     height:100%;
     text-align:center;
     justify-content: center;
+    z-index:10;
 }
 
 .content{
@@ -49,7 +50,7 @@
 
 .loginBtn{
     font-weight: bold;
-    width:13.5rem;
+    width:23.4rem;
     height:4.6rem;
     margin-top:5.4rem;
     background-color: #B6B6B6;
