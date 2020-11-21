@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage';
+import MyStone from './pages/MyStone/MyStone';
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/my-stone" component={MyStone} />
         </Switch>
     </Router>
   );
