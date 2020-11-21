@@ -4,16 +4,17 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import HomePage from './pages/HomePage/HomePage';
 import StartPage from './pages/HomePage/StartPage';
+import LandingPage from './pages/landingpage/LandingPage';
 
 
 const App = () => {
   return (
       <Router>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={LandingPage} />
           <Route exact path="/start" component={StartPage} />
+
         </Switch>
     </Router>
   );
