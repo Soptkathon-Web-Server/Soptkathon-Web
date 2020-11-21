@@ -1,9 +1,8 @@
 import './MyStoneList.scss'
 import React from 'react';
 import { useEffect, useState } from 'react';
-import getMyStones from '../lib/mystoneAPI';
+import { getMyStones } from '../../lib/mystoneAPI';
 import Stone from '../../components/Stone';
-
 
 function MyStoneList({ history, match }) {
     const [ stonesState, setStonesState ] = useState({

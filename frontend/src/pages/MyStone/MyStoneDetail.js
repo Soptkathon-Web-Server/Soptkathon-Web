@@ -1,4 +1,3 @@
-import './MyStoneDetail.scss';
 import { useState, useEffect } from 'react';
 import { getOneStone } from '../../lib/mystoneAPI';
 import MyStoneModal from '../../components/MyStoneModal';
@@ -29,7 +28,7 @@ function MyStoneDetail({ match }) {
         case 'rejected':
             return <h1>해당 기록이 없습니다</h1>;
         case 'resolved':
-            return <MyStoneModal stoneData={data.data}/>;
+            return <MyStoneModal stoneData={setOneStoneState.stone}/>;
         case 'idle':
         default: 
             return <div></div>

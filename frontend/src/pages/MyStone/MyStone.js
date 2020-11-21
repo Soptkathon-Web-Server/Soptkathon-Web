@@ -8,7 +8,7 @@ import {
 import MyStoneList from './MyStoneList';
 import MyStoneDetail from './MyStoneDetail';
 
-const MyStone = () => {
+const MyStone = ({ match }) => {
   return (
     <Router>
       <Switch>

@@ -13,7 +13,6 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/my-stone" component={MyStone} />
         </Switch>
     </Router>
   );
