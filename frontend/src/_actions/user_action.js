@@ -1,6 +1,18 @@
 import axios from 'axios';
-import {LOGIN_USER,REGISTER_USER,AUTH_USER, LOGOUT_USER} from './types';
+import {INIT_USER ,LOGIN_USER,REGISTER_USER,AUTH_USER, LOGOUT_USER} from './types';
 import { USER_SERVER } from '../_actions/config';
+
+export const initUser=()=>{
+   
+    const request = axios.get(`${USER_SERVER}/auth/rand-token`)
+    .then(response => response.data.data)
+
+    return{
+        type: INIT_USER,
+        payload: request
+    }
+}
+
 
 export const loginUser=(dataToSubmit)=>{
    

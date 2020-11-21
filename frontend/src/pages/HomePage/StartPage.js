@@ -68,6 +68,20 @@ const Button = styled.button`
         background-color:#C4C4C4;
     }
 `
+
+const SLink = styled.a`
+    background:  #0066FF;
+    border-radius: 30px;
+    font-size:3rem;
+    font-weight:bold;
+    color: white;
+    border: none;
+    padding: 6px 55px;
+    cursor: pointer;
+    &:disabled{
+        background-color:#C4C4C4;
+    }
+`
 const InputOne = styled.input`
     width: 4rem;
     height: 4rem;
@@ -233,11 +247,11 @@ const StartPage = () => {
     const [birthMonth,setBirthMonth] = useState(0);
     const [birthDay,setBirthDay] = useState(0);
     const [house,setHouse] = useState();
-    const [randomOne,setRandomOne] = useState();
-    const [randomTwo,setRandomTwo] = useState();
-    const [randomThree,setRandomThree] = useState();
-    const [randomFour,setRandomFour] = useState();
-    const [randomFive,setRandomFive] = useState();
+    const [randomOne,setRandomOne] = useState('');
+    const [randomTwo,setRandomTwo] = useState('');
+    const [randomThree,setRandomThree] = useState('');
+    const [randomFour,setRandomFour] = useState('');
+    const [randomFive,setRandomFive] = useState('');
     const [randomQustion, setRandomQustion] = useState([])
     useEffect(() => {
 
@@ -254,7 +268,7 @@ const StartPage = () => {
     const onClickHandler = () => {
 
         if(transy < 2000){
-            setTransy(transy+400);
+            setTransy(transy+250);
             setQustionNumber(qustionNumber+1);
         }else{
             setTransy(2000);
@@ -463,9 +477,9 @@ const StartPage = () => {
                     </QustionContainer>
                     <BlankTop margin='3.9'/>
                     { randomFive ?
-                        <Button onClick={onClickHandler} >던지기</Button>
+                        <SLink href='/register' >나의 호수 찾기</SLink>
                      :               
-                         <Button onClick={onClickHandler} disabled >던지기</Button>
+                         <SLink disabled >나의 호수 찾기</SLink>
                     }
                     </Wrap>
                 </StyledTemplate>

@@ -1,8 +1,11 @@
-import{LOGIN_USER,REGISTER_USER, AUTH_USER, LOGOUT_USER,} from '../_actions/types'
+import{INIT_USER,LOGIN_USER,REGISTER_USER, AUTH_USER, LOGOUT_USER,} from '../_actions/types'
 
 
 export default function (state={}, action) {
     switch (action.type){
+        case INIT_USER:
+            return{...state,init:action.payload,isAuth:false};
+            break;
         
         case LOGIN_USER:
                 return {...state,loginSuccess:action.payload};
