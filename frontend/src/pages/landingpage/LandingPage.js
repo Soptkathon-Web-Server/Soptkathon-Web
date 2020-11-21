@@ -7,7 +7,6 @@ import Axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import FirstStoneIcon from '../../asset/icon/first_storn_icon.svg';
 import GotoPondIcon from '../../asset/icon/gotopond_icon.svg';
 import { initUser } from '../../_actions/user_action';
 
@@ -51,8 +50,11 @@ const LandingPage = () => {
             <div className="landing-bnt">
                 
                 <div className="landing-bnt-box"></div>
-                    <img className="first-button" src={FirstStoneIcon} alt="my image"/>
+                    <a href='/start'><img className="first-button" src={FirstStoneIcon} alt="my image"/></a>
+                <a href='/login'>
                 <p className="landing-buttontext">이미 내 호수가 있다면?</p>
+
+                    </a>
             </div>
         </div>
     );
