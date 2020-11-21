@@ -50,8 +50,11 @@ const LandingPage = () => {
             <div className="landing-bnt">
                 
                 <div className="landing-bnt-box"></div>
-                    <img className="first-button" src={FirstStoneIcon} alt="my image"/>
+                    <a href='/start'><img className="first-button" src={FirstStoneIcon} alt="my image"/></a>
+                <a href='/login'>
                 <p className="landing-buttontext">이미 내 호수가 있다면?</p>
+
+                    </a>
             </div>
         </div>
     );
