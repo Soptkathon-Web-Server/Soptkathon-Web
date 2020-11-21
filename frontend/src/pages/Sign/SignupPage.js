@@ -1,5 +1,7 @@
 import './Signup.scss'
 import React, { useState } from 'react';
+import img from '../../assets/login.svg';
+import logo from '../../assets/img_logo.svg';
 
 const SignupPage = () => {
   const [password,setPassword] = useState('');
@@ -16,7 +18,8 @@ const SignupPage = () => {
   }
   return (
     <div class = "outer">
-    <div class="container"></div>
+      <img class="logo" src ={logo}/>
+      <img class="pic" src ={img}/>
         <div class = "left">
             <div class = "content">
                 <div class = "title">오늘의 돌멩이를 나만의 호수에 쌓아보세요.</div>
