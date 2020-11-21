@@ -7,7 +7,6 @@ import Axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import FirstStoneIcon from '../../asset/icon/first_storn_icon.svg';
 import GotoPondIcon from '../../asset/icon/gotopond_icon.svg';
 import { initUser } from '../../_actions/user_action';
 
