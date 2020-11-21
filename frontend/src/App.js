@@ -20,7 +20,6 @@ const App = () => {
           <Route exact path='/mystone' component={MyStoneList}/>
           <Route exact path='/login' component={LoginPage}/>
           <Route exact path='/register' component={SignupPage}/>
-
         </Switch>
     </Router>
   );

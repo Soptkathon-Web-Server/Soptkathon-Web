@@ -14,9 +14,9 @@ export const initUser=()=>{
 }
 
 
-export const loginUser=(dataToSubmit)=>{
+export const loginUser=(dataToSubmit,config)=>{
    
-    const request = axios.post(`${USER_SERVER}/login`,dataToSubmit)
+    const request = axios.post(`${USER_SERVER}/auth/login`,dataToSubmit,config)
     .then(response => response.data)
 
     return{
@@ -25,9 +25,9 @@ export const loginUser=(dataToSubmit)=>{
     }
 }
 
-export const registerUser=(dataToSubmit)=>{
+export const registerUser=(dataToSubmit,config)=>{
    
-    const request = axios.post(`${USER_SERVER}/register`,dataToSubmit)
+    const request = axios.post(`${USER_SERVER}/auth/signup`,dataToSubmit,config)
     .then(response => response.data)
 
     return{
