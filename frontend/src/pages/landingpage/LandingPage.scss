@@ -2,7 +2,7 @@
 body {
     font-family: "Noto Sans KR", sans-serif !important;
     background-color: #4C38D6;
-
+    overflow-x:hidden;
   }
 
 
@@ -97,31 +97,32 @@ body {
     margin-bottom: 20px;
 }
  
+a{
+  text-decoration:none
+}
 
- .landing-buttontext {
-    position: relative;
-     font-size: 18px;
-     margin-bottom: 100px;
-     color: #CACACA;
-     border-bottom: solid #CACACA;
- }
+.landing-bnt {
+  position: relative;
+  margin-left:38%;
+  top: 900px;
+}
 
- .landing-bnt {
-    display: flex;
+.landing-bnt-box {
+}
+
+/*풀페이지에서만 제대로 보이게 임시로 맞춰놓음 수정 필요*/
+.landing-buttontext {
+    display:flex;
     justify-content: center;
+    width: 19%;
+    text-align: center;
     position: relative;
-
-    top: 900px;
-    margin-bottom: 400px;
- }
-
- .landing-bnt-box {
-     width: 372px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;     
- }
+    font-size: 18px;
+    margin-bottom: 100px;
+    margin-left:7%;
+    color: #CACACA;
+    border-bottom: 1px solid #CACACA;
+}
 
   
   @keyframes type {
