@@ -28,7 +28,7 @@ const LoginPage = (props) => {
     dispatch(loginUser(variable,config)).then(
       response => {
         if (response.payload.success) {
-          props.history.push("/stone");
+          props.history.push("/mystone");
         } else {
 
           }
@@ -48,7 +48,6 @@ const LoginPage = (props) => {
                         <div><input className="inputbox" type="text" placeholder="비밀번호" value={password} onChange={onChangePassword} minLength='6'/></div>
                     </form>
                     <button className = "loginBtn" onClick={toSubmit}>로그인</button>
-                <button className = "loginBtn" toSubmit={toSubmit}>로그인</button>
             </div>
         </div>
     </div>

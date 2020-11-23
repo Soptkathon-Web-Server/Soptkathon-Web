@@ -1,14 +1,13 @@
-import FirstStoneIcon from '../../asset/icon/throw_stone_icon.svg';
-import ArrowImg from '../../asset/icon/arrow_img.svg';
-import StoneImg from '../../asset/icon/stone_img.svg';
-import LandingImg from '../../asset/icon/landing_img.png'
+import FirstStoneIcon from '../../assets/throw_stone_icon.svg';
+import ArrowImg from '../../assets/arrow_img.svg';
+import StoneImg from '../../assets/stone_img.svg';
+import LandingImg from '../../assets/landing_img.png'
 
 import Axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import FirstStoneIcon from '../../asset/icon/first_storn_icon.svg';
-import GotoPondIcon from '../../asset/icon/gotopond_icon.svg';
+import GotoPondIcon from '../../assets/gotopond_icon.svg';
 import { initUser } from '../../_actions/user_action';
 
 import './LandingPage.scss';
@@ -49,13 +48,21 @@ const LandingPage = () => {
             <img className="landing-stoneimg" src={StoneImg} alt="stone image"/>
             
             <div className="landing-bnt">
-                
-                <div className="landing-bnt-box"></div>
-                    <img className="first-button" src={FirstStoneIcon} alt="my image"/>
-                <p className="landing-buttontext">이미 내 호수가 있다면?</p>
+                <div className="landing-bnt-box">
+                   <a href="/start"><img className="first-button" src={FirstStoneIcon} alt="my image"/></a>
+                </div>
+                <div>
+                    <a href="/login"><p className="landing-buttontext">이미 내 호수가 있다면?</p></a>
+                </div>
             </div>
         </div>
     );
 }
+
+/*
+                <div>
+                    <a href="/login"><p className="landing-buttontext">이미 내 호수가 있다면?</p></a>
+                </div>
+*/
 
 export default LandingPage;

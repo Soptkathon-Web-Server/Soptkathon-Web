@@ -6,9 +6,10 @@ import {
 } from "react-router-dom";
 import StartPage from './pages/HomePage/StartPage';
 import LandingPage from './pages/landingpage/LandingPage';
-import MyStoneList from './pages/MyStone/MyStoneList';
+import MyStoneList from './pages/MyStone/MyPage';
 import LoginPage from './pages/Sign/LoginPage';
 import SignupPage from './pages/Sign/SignupPage';
+import ModalPage from './pages/MyStone/Popup'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route exact path="/" component={LandingPage} />
           <Route exact path="/start" component={StartPage} />
           <Route exact path='/mystone' component={MyStoneList}/>
+          <Route exact path='/mystone/modal' component={ModalPage}/>
           <Route exact path='/login' component={LoginPage}/>
           <Route exact path='/register' component={SignupPage}/>
         </Switch>
