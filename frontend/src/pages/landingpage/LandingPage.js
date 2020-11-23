@@ -59,10 +59,4 @@ const LandingPage = () => {
     );
 }
 
-/*
-                <div>
-                    <a href="/login"><p className="landing-buttontext">이미 내 호수가 있다면?</p></a>
-                </div>
-*/
-
 export default LandingPage;

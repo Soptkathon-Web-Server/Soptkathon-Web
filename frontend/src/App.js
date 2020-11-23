@@ -11,7 +11,6 @@ import LoginPage from './pages/Sign/LoginPage';
 import SignupPage from './pages/Sign/SignupPage';
 import ModalPage from './pages/MyStone/Popup'
 
-
 const App = () => {
   return (
       <Router>
@@ -22,6 +21,7 @@ const App = () => {
           <Route exact path='/mystone/modal' component={ModalPage}/>
           <Route exact path='/login' component={LoginPage}/>
           <Route exact path='/register' component={SignupPage}/>
+          <Route exact path='/popup' component={Popup}/>
         </Switch>
     </Router>
   );
